@@ -1,0 +1,11 @@
+<h2>Available Tools</h2>
+<ul>
+  {% for tool in tools %}
+    <li>
+      <b>{{ tool.name }}</b> - ₹{{ tool.price_per_day }}/day
+      <a href="{% url 'rent_tool' tool.id %}">Rent</a>
+    </li>
+  {% empty %}
+    <li>No tools available.</li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farmer Tools Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-green-700 text-white p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">🌾 AgriTools Hub</h1>
+      <ul class="flex space-x-6">
+        <li><a href="/dashboard/" class="hover:text-yellow-300">Dashboard</a></li>
+        <li><a href="/bookings/" class="hover:text-yellow-300">Bookings</a></li>
+        <li><a href="/payments/" class="hover:text-yellow-300">Payments</a></li>
+        <li><a href="/admin/" class="hover:text-yellow-300">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Background -->
+  <header class="relative py-24 shadow-lg"
+          style="background-image: url('{% static "Image/farm_bg.jpeg" %}');
+                 background-size: cover;
+                 background-position: center;
+                 background-repeat: no-repeat;">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-4xl font-extrabold text-gray-900">Empowering Farmers with Modern Tools </h2>
+      <p class="mt-3 text-lg text-gray-900">Rent the right equipment at the right time – boost your productivity and save costs.</p>
+    </div>
+  </header>
+
+  <!-- Tools Grid -->
+  <main class="container mx-auto py-12 px-6">
+    <h3 class="text-3xl font-bold text-green-700 mb-8 text-center">Available Tools for Rent</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- Tractor -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Tractor.jpeg' %}" alt="Tractor" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Tractor</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 2,000 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Powerful machine for ploughing, tilling, and transporting loads efficiently.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Plough -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Plough.jpg' %}" alt="Plough" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Plough</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 500 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Essential for preparing soil by cutting, lifting, and turning it for sowing.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Water Pump -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/WaterPump.jpeg' %}" alt="Water Pump" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Water Pump</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 400 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Reliable pump to irrigate fields and supply water for farming needs.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Drone -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Drone.png' %}" alt="Drone" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Drone</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 3,500 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Advanced drone for crop monitoring, spraying, and precision farming.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Harrow -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Harrow.jpg' %}" alt="Harrow" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Harrow</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 700 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Used to break up clumps of soil and prepare smooth seedbeds.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Loader -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Loader.jpg' %}" alt="Loader" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Loader</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 1,200 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Perfect for lifting and transporting heavy materials on the farm.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Seeder -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Seeder.jpeg' %}" alt="Seeder" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Seeder</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 600 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Ensures uniform seed planting with improved crop yields.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Sprayer -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Sprayer.jpg' %}" alt="Sprayer" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Sprayer</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 450 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Used for applying pesticides, herbicides, and fertilizers effectively.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Wagon -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Wagon.jpeg' %}" alt="Wagon" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Wagon</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 800 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Strong wagon for transporting crops, hay, and other heavy loads.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Plows -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Plows.jpeg' %}" alt="Plows" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Plows</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 650 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Ideal for loosening soil and turning it over for fresh planting.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Baler -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Baler.jpeg' %}" alt="Baler" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Baler</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 1,500 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Bundles hay, straw, or crops into compact bales for storage.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+      <!-- Harvestor -->
+      <div class="bg-white rounded-xl shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="{% static 'Image/Harvestor.jpeg' %}" alt="Harvestor" class="rounded-lg mb-4 w-full h-60 object-cover transition duration-300 hover:scale-110">
+        <h4 class="text-lg font-semibold">Harvestor</h4>
+        <p class="text-green-700 font-bold mb-1">₹ 4,000 / day</p>
+        <p class="text-gray-600 text-sm mb-3">Efficient machine for harvesting crops quickly with minimal loss.</p>
+        <a href="/bookings/" class="block bg-green-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-700 transition">Book Now</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white text-center py-4 mt-12">
+    <p>&copy; 2025 AgriTools Hub. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

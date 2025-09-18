@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-red-50 p-6">
+    <h1 class="text-3xl font-bold mb-4">Payments</h1>
+    <table class="table-auto w-full border-collapse border border-gray-300">
+        <tr class="bg-gray-200">
+            <th class="border px-4 py-2">User</th>
+            <th class="border px-4 py-2">Tool</th>
+            <th class="border px-4 py-2">Amount</th>
+            <th class="border px-4 py-2">Status</th>
+            <th class="border px-4 py-2">Paid On</th>
+        </tr>
+        {% for payment in payments %}
+        <tr class="text-center">
+            <td class="border px-4 py-2">{{ payment.booking.user.username }}</td>
+            <td class="border px-4 py-2">{{ payment.booking.tool_name }}</td>
+            <td class="border px-4 py-2">₹{{ payment.amount }}</td>
+            <td class="border px-4 py-2">{{ payment.status }}</td>
+            <td class="border px-4 py-2">{{ payment.paid_on }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

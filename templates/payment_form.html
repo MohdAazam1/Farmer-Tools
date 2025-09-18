@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Pay to Rent Tool</title></head>
+<body>
+<h2>Enter Amount to Pay</h2>
+<form method="post">
+    {% csrf_token %}
+    <label>Amount (INR):</label>
+    <input type="number" name="amount" required>
+    <button type="submit">Pay Now</button>
+</form>
+</body>
+</html>

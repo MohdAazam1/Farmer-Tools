@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Available Tools</h2>
+
+    <div class="row">
+        {% for tool in tools %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <!-- Tool Image -->
+                {% if tool.image %}
+                    <img src="{{ tool.image.url }}" class="card-img-top" alt="{{ tool.name }}">
+                {% else %}
+                    <img src="{% static 'Image/farm_bg.jpeg' %}" class="card-img-top" alt="Default Tool">
+                {% endif %}
+
+                <div class="card-body d-flex flex-column">
+                    <!-- Tool Name -->
+                    <h5 class="card-title">{{ tool.name }}</h5>
+                    
+                    <!-- Tool Description -->
+                    <p class="card-text">{{ tool.description|default:"No description available." }}</p>
+                    
+                    <!-- Tool Price -->
+                    <p class="text-success fw-bold">₹{{ tool.price }} / day</p>
+                    
+                    <!-- Book Now Button -->
+                    <form action="{% url 'book_order' tool.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary w-100">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No tools available at the moment.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
